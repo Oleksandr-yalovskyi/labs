@@ -5,39 +5,32 @@ int main() {
 	int size = 5;
 	int A[size][size], B[size][size];
 	float zeroCount = 0, count = 0;
-	float ratio = 0;
+
+	cout << "Matrix A: " << endl;
 
 	for ( int i = 0; i < size; i++ ) {
+	    int *el = A[i];
 		for ( int j = 0; j < size; j++ ) {
-			A[i][j] = rand() % 5;
-			if ( A[i][j] == 0 ) {
+			*(el+j) = rand() % 5;
+			if ( *(el+j) == 0 ) {
 				zeroCount++;
-				
 			} else {
 				count++;
 			}
-		}
-	}
-
-    ratio += zeroCount/count;
-
-	cout << "The ratio of the number of zero elements to the number of non-zero: " << ratio << endl;
-	
-	cout << "Matrix A: " << endl;
-
-    for ( int col = 0; col < size; col++ ) {
-		for ( int row = 0; row < size; row++ ) {
-			cout << A[row][col] << " ";
+			cout << *(el+j) << " ";
 		}
 		cout << endl;
 	}
+
+	cout << "The ratio of the number of zero elements to the number of non-zero: " << zeroCount/count << endl;
 	
 	cout << "Matrix B: " << endl;
 
-    for ( int col = 0; col < size; col++ ) {
-		for ( int row = 0; row < size; row++ ) {
-			B[row][col] = A[size-1-row][col];
-			cout << B[row][col] << " ";
+    for ( int i = 0; i < size; i++ ) {
+        int *col = B[i], *el = A[i];
+		for ( int j = 0; j < size; j++ ) {
+		    *(col+j) = *(el+size-1-j);
+		    cout << *(col+j) << " ";
 		}
 		cout << endl;
 	}
