@@ -1,26 +1,28 @@
 #include <iostream>
 using namespace std;
 
-class Array {
-private:
-	int capacity;
-	int* array;
-public:
-	Array();
-	~Array();
+class Array { // створення класу 
+	private: // ініціалізація недоступних змінних
+		int capacity;
+		int* array;
+	public: // функції та методи
+		Array(); // конструктор
+		~Array(); // деструктор
 
-	void getCapacity();
-	void find();
-	void arrayPrint();
-	void arrayScan();
-	void result();
+		// функції для роботи з масивом
+		void setCapacity(); // встановлення розміру масиву
+		void find(); // пошук по індексу
+		void arrayPrint(); // вивід масиву на екран
+		void arrayScan(); // ввід масиву вручну
+		void result(); // завдання з варіанту
 
-	void operator+=(const Array& other);
-	void operator-=(const Array & other);
-	void operator*=(const Array& other);
+		// перенавантаження операторів
+		void operator+=(const Array& other);
+		void operator-=(const Array & other);
+		void operator*=(const Array& other);
 };
 
-Array::Array() {
+Array::Array() { // створення масиву у конструкторі
 	capacity = 100;
 	array = new int[capacity];
 	for (int i = 0; i < capacity; i++) {
@@ -28,7 +30,7 @@ Array::Array() {
 	}
 }
 
-Array::~Array() {
+Array::~Array() { // видалення масиву
 	delete[] array;
 }
 
@@ -45,7 +47,8 @@ void Array::arrayScan() {
 	}
 }
 
-void Array::getCapacity() {
+void Array::setCapacity() {
+	cout << "Enter your capacity: "
 	cin >> capacity;
 }
 
@@ -90,16 +93,17 @@ void Array::operator*=(const Array& other) {
 }
 
 int main() {
-	Array array1, array2;
-	array1.getCapacity();
+	Array array1, array2; // ініціалізація двох масивів
+
+	// перевірка роботи функцій
+	array1.setCapacity();
 	array1.arrayPrint();
 	array1.result();
 	array1.find();
 
-	array2.getCapacity();
+	array2.setCapacity();
+	array2.arrayScan();
 	array2.arrayPrint();
-	array2.result();
-	array2.find();
 
 	array1 += array2;
 	array1.arrayPrint();
