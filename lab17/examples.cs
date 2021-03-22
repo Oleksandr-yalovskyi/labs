@@ -103,25 +103,6 @@ using System;
 namespace l17{
     class Program{
         static void Main(string[] args){
-            string msg;
-
-            msg = "Hello";
-
-            string name = "Vasj";
-
-            Console.WriteLine($"{msg}, {name}");
-
-            Console.ReadKey();
-        }
-    }
-}
-
-// 8
-using System;
-
-namespace l17{
-    class Program{
-        static void Main(string[] args){
             const string MSG = "HELLO";
 
             string name = "Vasj";
@@ -134,7 +115,7 @@ namespace l17{
     }
 }
 
-// 9
+// 8
 using System;
 
 namespace l17{
@@ -159,7 +140,7 @@ namespace l17{
     }
 }
 
-// 10
+// 9
 using System;
 
 namespace l17{
@@ -174,7 +155,7 @@ namespace l17{
     }
 }
 
-// 11
+// 10
 using System;
 
 namespace l17{
@@ -190,7 +171,7 @@ namespace l17{
     }
 }
 
-// 12
+// 11
 using System;
 
 namespace l17{
@@ -204,7 +185,7 @@ namespace l17{
     }
 }
 
-// 13
+// 12
 using System;
 
 namespace l17{
