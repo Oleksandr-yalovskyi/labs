@@ -15,7 +15,7 @@ namespace l20{
 	        	} else {
 	        		Console.WriteLine("String is a palindrom");
 	        	}
-	        }
-		}
+	       	}
+	}
     }
 }
